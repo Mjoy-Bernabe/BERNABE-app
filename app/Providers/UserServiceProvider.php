@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Models\User;
 use App\Services\UserService;
+use Illuminate\Support\ServiceProvider;
 
 
 class UserServiceProvider extends ServiceProvider
@@ -19,7 +20,8 @@ class UserServiceProvider extends ServiceProvider
                 [
                     'name' => 'Ando',
                     'age' => 20, 
-                ],
+                ]
+                
             ];
             return new UserService($users);
         });
