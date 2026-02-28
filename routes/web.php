@@ -2,14 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Services\ProductService;
 use App\Models\User;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades;
 use Illuminate\Support\Facades\Response;
 
+
 Route::get('/', function () {
-    return ("Hellooooo");   
+    return view('welcome',['name' => 'bernabe-app']);   
 });
 
 Route::get('/show-users', [UserController::class, 'show']);
@@ -67,4 +70,17 @@ Route::get('/token', function (Request $request) {
 
 Route::post('/token', function (Request $request) {
     return $request->all();
+});
+
+
+//usercontroller with middleware
+Route::get('/user', [UserController::class, 'index'])->middleware('user-middleware');
+
+//resource
+Route::resource('products', ProductController::class);
+
+//view with data
+Route::get('/product-list', function (ProductService $productServices) {
+    $data['products'] = $productServices->listProduct();
+    return view('products.list', $data);
 });
