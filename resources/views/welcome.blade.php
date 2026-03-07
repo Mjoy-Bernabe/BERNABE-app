@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <body>
+
+<x-layout>
+    <x-slot:heading>
         <h1>Welcome to {{ $name }}</h1>
-</html>
+    </x-slot>
+</x-layout>

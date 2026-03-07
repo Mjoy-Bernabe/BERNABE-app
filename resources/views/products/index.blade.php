@@ -1,6 +1,9 @@
-<div class="container">
-    <h1>Products</h1>
-    <table class="table table-striped">
+<x-layout>
+    <x-slot:heading>Products List
+
+    </x-slot>
+
+    <x-table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -17,8 +20,10 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
-</div>
+    </x-table>
+</x-layout>
+
+<!-- </div>
 
 <h1>Tasks</h1>
 <ul>
@@ -30,4 +35,4 @@
 <p>Global Variable:</p>
 <p>{{ $ShareVariable }}</p>
 
-<p>Product Key: {{ $productKey }}</p>   
+<p>Product Key: {{ $productKey }}</p>    -->

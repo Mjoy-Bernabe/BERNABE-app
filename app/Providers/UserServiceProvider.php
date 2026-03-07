@@ -14,12 +14,14 @@ class UserServiceProvider extends ServiceProvider
          $this->app->singleton(UserService::class, function ($app) {
             $users = [
                 [
+                    'id' => 1,
                     'name' => 'Maria',
-                    'age' => 20, 
+                    'gender' => 'Female',
                 ],
                 [
+                    'id' => 2,
                     'name' => 'Ando',
-                    'age' => 20, 
+                    'gender' => 'Male',
                 ]
                 
             ];
